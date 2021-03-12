@@ -1,7 +1,8 @@
 name: deploy
 on: push
 jobs:
-  deploy:
+  heroku-deploy:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
