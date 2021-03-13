@@ -3,7 +3,6 @@ on: push
 
 jobs:
   action-deploy:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -35,7 +34,7 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      - name: Add Heroku remote
+      - name: Add remote to Heroku
         run: heroku git:remote --app $HEROKU_APP_NAME
         env:
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
